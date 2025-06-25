@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdou Latif</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .line {
+            width: 50px;
+            height: 3px;
+            background-color: #1e90ff;
+            margin: 0 auto 20px;
+        }
+        .info-box {
+            background: #2a2a2a;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fff;
+            transition: transform 0.2s;
+        }
+        .info-box:hover {
+            transform: scale(1.05);
+        }
+        .info-box img {
+            width: 20px;
+            margin-right: 10px;
+        }
+        .note {
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8em; }
+            .info-box { flex-direction: column; text-align: center; }
+            .info-box img { margin-right: 0; margin-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Abdou Latif</h1>
+        <div class="line"></div>
+        <a href="http://www.abdoulatif.com" class="info-box" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/1e90ff/globe.png" alt="Website">
+            www.abdoulatif.com
+        </a>
+        <div class="info-box">Contactez-moi</div>
+        <a href="mailto:contact@abdoulatif.com" class="info-box">
+            <img src="https://img.icons8.com/ios-filled/50/1e90ff/filled-message.png" alt="Email">
+            contact@abdoulatif.com
+        </a>
+        <a href="tel:+221781716623" class="info-box">
+            <img src="https://img.icons8.com/ios-filled/50/1e90ff/phone.png" alt="Phone">
+            +221 78 171 66 23
+        </a>
+        <div class="note">
+            Site en cours de développement<br>
+            Merci de votre patience
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript for interactivity (e.g., alert on contact click)
+        document.querySelectorAll('.info-box')[1].addEventListener('click', function() {
+            alert('Pour me contacter, utilisez l\'email ou le téléphone ci-dessus.');
+        });
+    </script>
+</body>
+</html>
