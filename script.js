@@ -307,3 +307,47 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Page Coming Soon initialisée avec succès!');
 });
 
+// script.js
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+// بيانات مشروعك في Supabase
+const supabaseUrl = "https://xgbzlbndjfrnqutjnuzn.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhnYnpsYm5kamZybnF1dGpudXpuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk5NTIyMTYsImV4cCI6MjA2NTUyODIxNn0.QmFwv3XG05L7Ms6VTkahWPnBpr30n79JN4TS4LsBkV0";
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// العناصر
+const form = document.getElementById("emailForm");
+const emailInput = document.getElementById("email");
+const successMessage = document.getElementById("successMessage");
+const btnText = document.querySelector(".btn-text");
+const btnLoading = document.querySelector(".btn-loading");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const email = emailInput.value.trim();
+    if (!email) {
+        alert("Veuillez entrer une adresse email.");
+        return;
+    }
+
+    // حالة تحميل
+    btnText.style.display = "none";
+    btnLoading.style.display = "inline";
+
+    // إدخال البيانات في Supabase
+    const { error } = await supabase
+        .from("subscribers")
+        .insert([{ email }]);
+
+    // إيقاف التحميل
+    btnText.style.display = "inline";
+    btnLoading.style.display = "none";
+
+    if (error) {
+        alert("❌ Une erreur s'est produite : " + error.message);
+    } else {
+        successMessage.style.display = "block";
+        form.reset();
+    }
+});
