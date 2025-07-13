@@ -4,101 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdou Latif</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-        }
-        .container {
-            padding: 20px;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .line {
-            width: 50px;
-            height: 3px;
-            background-color: #1e90ff;
-            margin: 0 auto 20px;
-        }
-        .info-box {
-            background: #2a2a2a;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #fff;
-            transition: transform 0.2s;
-        }
-        .info-box:hover {
-            transform: scale(1.05);
-        }
-        .info-box img {
-            width: 20px;
-            margin-right: 10px;
-        }
-        .note {
-            color: #888;
-            font-size: 0.9em;
-            margin-top: 20px;
-        }
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8em; }
-            .info-box { flex-direction: column; text-align: center; }
-            .info-box img { margin-right: 0; margin-bottom: 5px; }
-        }
-    </style>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MGS56LNR');</script>
-<!-- End Google Tag Manager -->
+    <meta name="description" content="Un nouveau site arrive très bientôt... Restez connecté !">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGS56LNR"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
     <div class="container">
-        <h1>Abdou Latif</h1>
-        <div class="line"></div>
-        <a href="http://www.abdoulatif.com" class="info-box" target="_blank">
-            <img src="https://img.icons8.com/ios-filled/50/1e90ff/globe.png" alt="Website">
-            www.abdoulatif.com
-        </a>
-        <div class="info-box">Contactez-moi</div>
-        <a href="mailto:contact@abdoulatif.com" class="info-box">
-            <img src="https://img.icons8.com/ios-filled/50/1e90ff/filled-message.png" alt="Email">
-            contact@abdoulatif.com
-        </a>
-        <a href="tel:+221781716623" class="info-box">
-            <img src="https://img.icons8.com/ios-filled/50/1e90ff/phone.png" alt="Phone">
-            +221 78 171 66 23
-        </a>
-        <div class="note">
-            Site en cours de développement<br>
-            Merci de votre patience
-        </div>
+        <!-- Header avec logo/nom du site -->
+        <header class="header">
+            <h1 class="logo">Abdou Latif</h1>
+        </header>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <!-- Message d'accueil -->
+            <div class="welcome-section">
+                <h2 class="welcome-title">Un nouveau site arrive très bientôt...</h2>
+                <p class="welcome-subtitle">Une plateforme de contenu islamique et éducatif – bientôt en ligne.</p>
+                <p class="stay-connected">Restez connecté !</p>
+            </div>
+
+            <!-- Formulaire d'inscription -->
+            <div class="email-signup">
+                <h3 class="signup-title">Soyez les premiers informés</h3>
+                <form class="email-form" id="emailForm">
+                    <div class="input-group">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            placeholder="Votre adresse email" 
+                            required
+                            class="email-input"
+                        >
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">S'inscrire</span>
+                            <span class="btn-loading" style="display: none;">...</span>
+                        </button>
+                    </div>
+                    <p class="privacy-note">Nous respectons votre vie privée. Pas de spam.</p>
+                </form>
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <p>✅ Merci ! Vous serez notifié dès le lancement.</p>
+                </div>
+            </div>
+
+            <!-- Liens sociaux -->
+            <div class="social-links">
+                <h3 class="social-title">Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/19MMRz1LEh/" class="social-link facebook" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/share/19MMRz1LEh/" class="social-link instagram" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:contact@abdoulatif.com" class="social-link email" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bouton WhatsApp -->
+            <div class="whatsapp-section">
+                <a href="https://wa.me/+221781716623?text=Bonjour%2C%20j%27aimerais%20en%20savoir%20plus%20sur%20votre%20site%20web" 
+                   class="whatsapp-btn" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+                    </svg>
+                    <span>Contactez-nous sur WhatsApp</span>
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 abdoulatif.com - Tous droits réservés</p>
+        </footer>
     </div>
 
-    <script>
-        // Simple JavaScript for interactivity (e.g., alert on contact click)
-        document.querySelectorAll('.info-box')[1].addEventListener('click', function() {
-            alert('Pour me contacter, utilisez l\'email ou le téléphone ci-dessus.');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
